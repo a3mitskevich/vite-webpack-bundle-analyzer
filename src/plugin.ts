@@ -20,8 +20,9 @@ type ExcludedOptions = OverrideOptions | ServerOptions;
 type OverridesOptions = {
     analyzerMode?: ExcludeServerMod<BundleAnalyzerPlugin.Options['analyzerMode']>;
 };
+type BaseOptions = Omit<BundleAnalyzerPlugin.Options, ExcludedOptions>;
 
-type PluginOptions = Omit<BundleAnalyzerPlugin.Options, ExcludedOptions> & OverridesOptions
+type PluginOptions = BaseOptions & OverridesOptions & { enableBundleParsing?: boolean }
 
 const plugin = (opts: PluginOptions = {}): Plugin => {
     let config: ResolvedConfig;
@@ -46,7 +47,7 @@ const plugin = (opts: PluginOptions = {}): Plugin => {
                 })
             };
             fakeCompiler = {
-                outputPath: config.build.outDir,
+                outputPath: opts.enableBundleParsing ? config.build.outDir : '',
                 outputFileSystem: Object.create(null),
                 hooks: { done: { tapAsync } },
                 process: promise,

@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsup"
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

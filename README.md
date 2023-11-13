@@ -39,3 +39,4 @@ All config based by [webpack-bundle-analyzer](https://github.com/webpack-contrib
 1. Temporally excluded `server` value from `analyzerMode` and removed next related
    options: `analyzerHost`, `analyzerPort`, `analyzerUrl`.
 2. Overrides default value for defaultSizes: from `parsed` to `stat`
+3. Disabled bundle parsing by default because "webpack-bundle-analyzer" expected no module chunks. (For enabling default behavior set `enableBundleParsing: true`)
