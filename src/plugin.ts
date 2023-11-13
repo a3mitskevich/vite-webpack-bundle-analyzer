@@ -1,28 +1,9 @@
 import { Plugin, ResolvedConfig } from 'vite'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-import { Compiler, Stats } from 'webpack';
+import { Stats } from 'webpack';
 import transformBundleToWebpackStats from "./transform.ts";
 import { usePromise } from "./usePromise.ts";
-
-interface FakeCompiler extends Pick<Compiler, 'outputFileSystem' | 'outputPath'> {
-    hooks: { done: { tapAsync: Function } };
-    process: Promise<void>;
-}
-
-type ExcludeServerMod<T> = T extends 'server' ? never : T;
-
-type ServerOptions =  'analyzerHost' | 'analyzerPort' | 'analyzerUrl';
-
-type OverrideOptions = 'statsOptions' | 'analyzerMode';
-
-type ExcludedOptions = OverrideOptions | ServerOptions;
-
-type OverridesOptions = {
-    analyzerMode?: ExcludeServerMod<BundleAnalyzerPlugin.Options['analyzerMode']>;
-};
-type BaseOptions = Omit<BundleAnalyzerPlugin.Options, ExcludedOptions>;
-
-type PluginOptions = BaseOptions & OverridesOptions & { enableBundleParsing?: boolean }
+import { FakeCompiler, PluginOptions } from "./types.ts";
 
 const plugin = (opts: PluginOptions = {}): Plugin => {
     let config: ResolvedConfig;
