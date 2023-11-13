@@ -61,8 +61,4 @@ const plugin = (opts: PluginOptions = {}): Plugin => {
     }
 }
 
-plugin({
-    analyzerMode: 'static',
-})
-
 export default plugin;
