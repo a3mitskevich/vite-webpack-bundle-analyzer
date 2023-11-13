@@ -27,6 +27,9 @@ type PluginOptions = BaseOptions & OverridesOptions & { enableBundleParsing?: bo
 const plugin = (opts: PluginOptions = {}): Plugin => {
     let config: ResolvedConfig;
     let fakeCompiler: FakeCompiler;
+    if ((opts.analyzerMode as string) === 'server') {
+        console.warn('[vite-webpack-bundle-analyzer] { analyzerMode: "server" } not supported. Please change to another value')
+    }
     return {
         name: 'vite-webpack-bundle-analyzer',
         apply: 'build',
