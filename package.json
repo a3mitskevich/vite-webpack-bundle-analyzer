@@ -1,6 +1,6 @@
 {
   "name": "vite-webpack-bundle-analyzer",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "type": "module",
   "license": "MIT",
   "description": "Vite plugin that represents bundle content as convenient interactive zoomable treemap from Webpack",

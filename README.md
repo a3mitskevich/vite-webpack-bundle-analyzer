@@ -1,9 +1,9 @@
 <div align="center">
-  <a href="https://github.com/webpack/webpack">
+  <a href="https://github.com/vitejs/vite">
     <img width="200" height="200"
       src="https://camo.githubusercontent.com/61e102d7c605ff91efedb9d7e47c1c4a07cef59d3e1da202fd74f4772122ca4e/68747470733a2f2f766974656a732e6465762f6c6f676f2e737667">
   </a>
-  <h1>Vite <span style="text-decoration: line-through; font-weight: normal">Webpack</span> Bundle Analyzer</h1>
+  <h1>Vite <s><small>Webpack</small></s> Bundle Analyzer</h1>
   <p>Visualize size of Vite output files with an interactive zoomable treemap.</p>
 </div>
 
@@ -38,5 +38,5 @@ All config based by [webpack-bundle-analyzer](https://github.com/webpack-contrib
 
 1. Temporally excluded `server` value from `analyzerMode` and removed next related
    options: `analyzerHost`, `analyzerPort`, `analyzerUrl`.
-2. Overrides default value for defaultSizes: from `parsed` to `stat`
+2. Overrides default value for defaultSizes: `parsed` -> `stat`
 3. Disabled bundle parsing by default because "webpack-bundle-analyzer" expected no module chunks. (For enabling default behavior set `enableBundleParsing: true`)
