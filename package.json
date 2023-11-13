@@ -1,0 +1,48 @@
+{
+  "name": "vite-webpack-bundle-analyzer",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "Vite plugin that represents bundle content as convenient interactive zoomable treemap from Webpack",
+  "scripts": {
+    "build": "tsup"
+  },
+  "files": ["dist"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "peerDependencies": {
+    "vite": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/webpack-bundle-analyzer": "4.6.3",
+    "typescript": "^5.2.2",
+    "vite": "4.5.0",
+    "tsup": "7.2.0"
+  },
+  "dependencies": {
+    "webpack-bundle-analyzer": "4.9.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "bundle",
+    "analyzer",
+    "modules",
+    "size",
+    "interactive",
+    "chart",
+    "treemap",
+    "zoomable",
+    "zoom"
+  ]
+}
